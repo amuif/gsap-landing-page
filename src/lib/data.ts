@@ -1,3 +1,71 @@
+import {
+  Brain,
+  MessageSquare,
+  Image,
+  Mic,
+  Code,
+  LineChart,
+  Shield,
+  ShoppingCart,
+  HeartPulse,
+  Bot,
+} from "lucide-react";
+
+export const aiUsesPrimary = [
+  {
+    title: "Smart Assistants",
+    description: "Chatbots and virtual assistants for automation",
+    icon: MessageSquare,
+  },
+  {
+    title: "Predictive Analytics",
+    description: "Forecast trends and user behavior",
+    icon: LineChart,
+  },
+  {
+    title: "Code Generation",
+    description: "Generate and optimize code with AI",
+    icon: Code,
+  },
+  {
+    title: "Image Generation",
+    description: "Create visuals from text prompts",
+    icon: Image,
+  },
+  {
+    title: "Voice Recognition",
+    description: "Convert speech into text and commands",
+    icon: Mic,
+  },
+];
+
+export const aiUsesSecondary = [
+  {
+    title: "Healthcare AI",
+    description: "Assist diagnosis and patient monitoring",
+    icon: HeartPulse,
+  },
+  {
+    title: "E-commerce Personalization",
+    description: "Recommend products intelligently",
+    icon: ShoppingCart,
+  },
+  {
+    title: "Cybersecurity",
+    description: "Detect threats and anomalies",
+    icon: Shield,
+  },
+  {
+    title: "Autonomous Agents",
+    description: "AI systems that act independently",
+    icon: Bot,
+  },
+  {
+    title: "Cognitive Computing",
+    description: "Simulate human-like thinking",
+    icon: Brain,
+  },
+];
 export const calls = [
   {
     id: 6,
@@ -5,7 +73,7 @@ export const calls = [
     image: "/1.jpeg",
     callType: "incoming",
     status: "answered",
-    time: "Today, 10:24 AM"
+    time: "Today, 10:24 AM",
   },
   {
     id: 2,
@@ -13,7 +81,7 @@ export const calls = [
     image: "/2.jpeg",
     callType: "outgoing",
     status: "completed",
-    time: "Today, 9:10 AM"
+    time: "Today, 9:10 AM",
   },
   {
     id: 3,
@@ -21,7 +89,7 @@ export const calls = [
     image: "/3.jpeg",
     callType: "incoming",
     status: "missed",
-    time: "Yesterday, 8:45 PM"
+    time: "Yesterday, 8:45 PM",
   },
   {
     id: 4,
@@ -29,7 +97,7 @@ export const calls = [
     image: "/4.jpeg",
     callType: "forwarded",
     status: "received",
-    time: "Yesterday, 6:30 PM"
+    time: "Yesterday, 6:30 PM",
   },
   {
     id: 5,
@@ -37,7 +105,7 @@ export const calls = [
     image: "/5.jpeg",
     callType: "outgoing",
     status: "missed",
-    time: "Yesterday, 2:15 PM"
+    time: "Yesterday, 2:15 PM",
   },
   {
     id: 6,
@@ -45,7 +113,7 @@ export const calls = [
     image: "/6.jpeg",
     callType: "incoming",
     status: "rejected",
-    time: "Apr 24, 11:00 AM"
+    time: "Apr 24, 11:00 AM",
   },
   {
     id: 7,
@@ -53,7 +121,7 @@ export const calls = [
     image: "/7.jpeg",
     callType: "forwarded",
     status: "missed",
-    time: "Apr 23, 5:40 PM"
+    time: "Apr 23, 5:40 PM",
   },
   {
     id: 8,
@@ -61,7 +129,7 @@ export const calls = [
     image: "/8.jpeg",
     callType: "outgoing",
     status: "completed",
-    time: "Apr 22, 3:20 PM"
+    time: "Apr 22, 3:20 PM",
   },
   {
     id: 9,
@@ -69,7 +137,7 @@ export const calls = [
     image: "/9.jpeg",
     callType: "incoming",
     status: "voicemail",
-    time: "Apr 21, 9:05 AM"
+    time: "Apr 21, 9:05 AM",
   },
   {
     id: 10,
@@ -77,8 +145,8 @@ export const calls = [
     image: "/10.jpeg",
     callType: "outgoing",
     status: "failed",
-    time: "Apr 20, 7:55 PM"
-  }
+    time: "Apr 20, 7:55 PM",
+  },
 ];
 export const data = [
   {
