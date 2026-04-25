@@ -31,7 +31,7 @@ const NavLinks = [
 ];
 const NavBar = () => {
   return (
-    <motion.div className="mx-auto ">
+    <motion.div className="mx-auto w-full ">
       {/* <AnimatePresence> */}
       <div className="hidden md:flex w-full ">
         <DesktopNavBar />

@@ -5,7 +5,7 @@ import OurServices from "./components/our-services";
 function App() {
   return (
     <div className="font-sans relative w-full flex flex-col items-center justify-center bg-white">
-      <div className="absolute top-4  max-w-7xl z-50 ">
+      <div className="absolute top-4  w-full md:max-w-3xl z-50 ">
         <NavBar />
       </div>
       <div className="w-full relative flex flex-col  items-center justify-center">
