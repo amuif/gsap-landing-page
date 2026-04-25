@@ -9,11 +9,11 @@ function App() {
         <NavBar />
       </div>
       <div className="w-full relative flex flex-col  items-center justify-center">
-          <Hero />
+        <Hero />
         <div className="w-full border-y border-dashed border-gray-300">
           <Margquee />
         </div>
-        <OurServices/>
+        <OurServices />
       </div>
     </div>
   );

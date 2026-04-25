@@ -13,8 +13,16 @@ const Hero = () => {
         </p>
       </div>
       <div className="flex flex-row gap-5">
-        <ButtonGradient text="Get in Touch" size={"xl"}  className="shadow-xl/20"/>
-        <ButtonGradient text="Book a Demo" size={"xl"} className="shadow-xl/20"/>
+        <ButtonGradient
+          text="Get in Touch"
+          size={"xl"}
+          className="shadow-xl/20"
+        />
+        <ButtonGradient
+          text="Book a Demo"
+          size={"xl"}
+          className="shadow-xl/20"
+        />
       </div>
     </div>
   );

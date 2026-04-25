@@ -33,12 +33,12 @@ const NavBar = () => {
   return (
     <motion.div className="mx-auto ">
       {/* <AnimatePresence> */}
-        <div className="hidden md:flex w-full ">
-          <DesktopNavBar />
-        </div>
-        <div className="flex md:hidden w-full px-2">
-          <MobileNavBar />
-        </div>
+      <div className="hidden md:flex w-full ">
+        <DesktopNavBar />
+      </div>
+      <div className="flex md:hidden w-full px-2">
+        <MobileNavBar />
+      </div>
       {/* </AnimatePresence> */}
     </motion.div>
   );
