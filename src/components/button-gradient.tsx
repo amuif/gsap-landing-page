@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 
-const GetInTouchButton = ({
+const ButtonGradient = ({
   text,
   size,
-  className
+  className,
 }: {
   text: string;
   size:
@@ -24,11 +24,14 @@ const GetInTouchButton = ({
   return (
     <Button
       size={size}
-      className={cn("rounded-full  border-gray-300 border-b-2 border-b-[#F04711]",className)}
+      className={cn(
+        "rounded-full  border-gray-300 border-b-2 border-b-[#F04711]",
+        className,
+      )}
     >
       {text}
     </Button>
   );
 };
 
-export default GetInTouchButton;
+export default ButtonGradient;
