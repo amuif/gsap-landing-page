@@ -20,17 +20,18 @@ import {
     DropdownMenuContent,
     DropdownMenuGroup,
     DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import { ChevronDown, Folder, Link, Mic, Plus, Send } from "lucide-react";
 import { TypingAnimation } from "./ui/typing-animation";
+import { Marquee } from "./ui/marquee";
+import { calls } from "@/lib/data";
+
 const OurServices = () => {
     return (
-        <div className="border-y-0 border border-dashed border-gray-300 w-full max-w-5xl  flex flex-col gap-4">
-            <div className="mx-auto pt-14 flex flex-col gap-5">
+        <div className="border-y-0  py-10 border border-dashed border-gray-300 w-full max-w-5xl  flex flex-col gap-4">
+            <div className="mx-auto p-14 flex flex-col gap-5">
                 <div className="mx-auto">
                     <SectionTitle title="our services" />
                 </div>
@@ -44,6 +45,7 @@ const OurServices = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-5">
                 <ServiceOne />
+                <ServiceTwo />
             </div>
         </div>
     );
@@ -62,8 +64,8 @@ function ServiceOne() {
     return (
         <Card className="py-0  pb-1 pt-5 bg-[#e5e5e5]">
             <CardHeader>
-                <CardTitle>Chatbot Development</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-left font-bold">Chatbot Development</CardTitle>
+                <CardDescription className="text-left">
                     We build custom AI chat solutions for instant support and sales.
                 </CardDescription>
             </CardHeader>
@@ -164,4 +166,57 @@ function ServiceOne() {
             </CardContent>
         </Card>
     );
+}
+
+function ServiceTwo() {
+    return (
+        <Card className="py-0  pb-1 pt-5 bg-[#e5e5e5]">
+            <CardHeader>
+                <CardTitle className="text-left font-bold">Voice Assistants</CardTitle>
+                <CardDescription className="text-left">
+                    We build smart voice solutions for effortless control and better access.
+                </CardDescription>
+            </CardHeader>
+           
+            <Marquee
+                vertical
+                className="h-75 overflow-hidden"
+            >
+                <div className="flex flex-col gap-3">
+                    {calls.map((call) => (
+                        <div
+                            key={call.id}
+                            className="flex items-center justify-between w-full px-4 py-3 rounded-2xl 
+                       bg-white/70 backdrop-blur-md border border-gray-200 
+                       shadow-sm hover:shadow-md transition-all duration-300"
+                        >
+                            <div className="flex items-center gap-3">
+                                <img
+                                    src={call.image}
+                                    alt={call.name}
+                                    className="h-12 w-12 rounded-full object-cover ring-2 ring-gray-200"
+                                />
+
+                                <div className="flex flex-col leading-tight">
+                                    <p className="text-sm font-semibold text-gray-900">
+                                        {call.name}
+                                    </p>
+                                    <div className="text-xs text-left text-gray-500 items-center justify-start flex gap-1 capitalize">
+                                     <div className="bg-black rounded-full h-2 w-2"></div>   {call.status}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <Button
+                                className="p-2 rounded-full bg-black/80 hover:bg-black/90 
+                         transition-colors duration-200"
+                            >
+                                <Mic className="w-4 h-4 text-white" />
+                            </Button>
+                        </div>
+                    ))}
+                </div>
+            </Marquee>
+        </Card>
+    )
 }
