@@ -94,15 +94,15 @@ const AboutUs = () => {
 
 export default AboutUs;
 
-
-function ProgressBar({ progress }: { progress: number }) {
+export function ProgressBar({ progress }: { progress: number }) {
   return (
     <div className="flex flex-row gap-0.5">
       {Array.from({ length: 4 }).map((_, i) => (
         <div key={i} className="w-full bg-gray-200 rounded-full h-2.5">
           <div
-            className={`${progress > i * 25 ? 'bg-black' : 'bg-[#e5e5e5]'
-              } h-3 w-1 rounded-sm transition-all duration-300`}
+            className={`${
+              progress > i * 25 ? "bg-black" : "bg-[#e5e5e5]"
+            } h-3 w-1 rounded-sm transition-all duration-300`}
           ></div>
         </div>
       ))}

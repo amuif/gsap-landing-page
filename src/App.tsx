@@ -3,6 +3,7 @@ import Hero from "./components/hero";
 import Margquee from "./components/marquee";
 import NavBar from "./components/nav-bar";
 import OurServices from "./components/our-services";
+import Pricing from "./components/pricing";
 function App() {
   return (
     <div className="font-sans relative w-full flex flex-col items-center justify-center bg-white">
@@ -17,6 +18,8 @@ function App() {
         <OurServices />
         <hr className="border-dashed border-gray-300 h-1 w-full" />
         <AboutUs />
+        <hr className="border-dashed border-gray-300 h-1 w-full" />
+        <Pricing />
       </div>
     </div>
   );
