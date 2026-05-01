@@ -1,10 +1,12 @@
 import { X } from "lucide-react";
 import SectionTitle from "./section-title";
-import { Separator } from "@/components/ui/separator";
+
 export default function WhyUs() {
   return (
-    <div className="py-10 md:py-10 px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5">
-      <SectionTitle title="Why Us" />
+    <div className="py-14 md:py-10 px-16 border-y-0  w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5">
+      <div className="flex items-center justify-center mx-auto">
+        <SectionTitle title="Why Us" />
+      </div>
       <div className=" p-4 rounded-lg flex-col flex gap-4 items-center">
         <h2 className="text-3xl md:text-5xl font-semibold">
           AI Partner, <span className="text-[#4f4f4f]">Done Right.</span>
