@@ -5,6 +5,7 @@ import NavBar from "./components/nav-bar";
 import OurServices from "./components/our-services";
 import Pricing from "./components/pricing";
 import Testimony from "./components/testimony";
+import WhyUs from "./components/why-us";
 function App() {
   return (
     <div className="font-sans relative w-full flex flex-col items-center justify-center bg-white">
@@ -23,6 +24,8 @@ function App() {
         <Pricing />
         <hr className="border-dashed border-gray-300 h-1 w-full" />
         <Testimony />
+        <hr className="border-dashed border-gray-300 h-1 w-full" />
+        <WhyUs />
       </div>
     </div>
   );
