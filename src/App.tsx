@@ -1,3 +1,4 @@
+import AboutUs from "./components/about-us";
 import Hero from "./components/hero";
 import Margquee from "./components/marquee";
 import NavBar from "./components/nav-bar";
@@ -14,6 +15,8 @@ function App() {
           <Margquee />
         </div>
         <OurServices />
+        <hr className="border-dashed border-gray-300 h-1 w-full" />
+        <AboutUs />
       </div>
     </div>
   );
