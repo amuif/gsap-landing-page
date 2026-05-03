@@ -15,7 +15,7 @@ export default function FAQ() {
   };
   return (
     <div className="py-10 md:py-10 px-16 border-y-0 w-full max-w-5xl border border-dashed  border-gray-300 flex flex-col gap-5">
-      <div >
+      <div>
         <div className="flex items-center justify-center mx-auto">
           <SectionTitle title="FAQs" />
         </div>
@@ -32,7 +32,9 @@ export default function FAQ() {
             title={item.title}
             description={item.description}
             isExpanded={expandedIndex === index}
-            onToggle={() => { handleToggle(index) }}
+            onToggle={() => {
+              handleToggle(index);
+            }}
             className={index !== processItems.length - 1 ? "mb-8" : ""}
           />
         ))}
@@ -69,12 +71,14 @@ const processItems: ProcessItem[] = [
     title: "Do I need technical expertise?",
     description:
       "Not at all! Our solutions are designed to be user-friendly, and we provide tutorials and support to guide you through every step.",
-  }, {
+  },
+  {
     number: "05",
     title: "Are there additional costs?",
     description:
       "No, your membership covers everything. The only potential extra costs are for external services like custom domains or third-party tools, if required.",
-  }, {
+  },
+  {
     number: "06",
     title: " How often do you release updates?",
     description:
@@ -135,7 +139,7 @@ export function FAQCARD({
       gsap.fromTo(
         descriptionRef.current,
         { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.5 }
+        { opacity: 1, y: 0, duration: 0.5 },
       );
     }
   }, [isExpanded]);
@@ -157,10 +161,7 @@ export function FAQCARD({
         className="flex flex-row items-center justify-between p-5 rounded-xl"
         data-name="Content"
       >
-        <div
-          className="flex flex-row gap-2"
-          data-name="Label"
-        >
+        <div className="flex flex-row gap-2" data-name="Label">
           <p className="relative shrink-0  max-sm:text-[26px] font-medium">
             {number}
           </p>
@@ -178,7 +179,9 @@ export function FAQCARD({
         <motion.div
           className={cn(
             "transition-all duration-300 overflow-hidden",
-            isExpanded ? `max-h-(--auto-height)` : "max-h-0 opacity-0 invisible"
+            isExpanded
+              ? `max-h-(--auto-height)`
+              : "max-h-0 opacity-0 invisible",
           )}
           style={
             {
@@ -186,12 +189,9 @@ export function FAQCARD({
             } as React.CSSProperties
           }
         >
-
           <div className="overflow-hidden flex flex-col gap-4 px-5 py-3">
             <hr className="border-dotted" />
-            <p className="text-left text-[#4f4f4f] text-sm" >
-              {description}
-            </p>
+            <p className="text-left text-[#4f4f4f] text-sm">{description}</p>
           </div>
         </motion.div>
       )}

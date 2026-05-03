@@ -9,17 +9,17 @@ const ButtonGradient = ({
 }: {
   text: string;
   size:
-  | "sm"
-  | "lg"
-  | "xl"
-  | "default"
-  | "xs"
-  | "icon"
-  | "icon-xs"
-  | "icon-sm"
-  | "icon-lg"
-  | null
-  | undefined;
+    | "sm"
+    | "lg"
+    | "xl"
+    | "default"
+    | "xs"
+    | "icon"
+    | "icon-xs"
+    | "icon-sm"
+    | "icon-lg"
+    | null
+    | undefined;
   className?: string;
 }) => {
   return (
@@ -37,8 +37,6 @@ const ButtonGradient = ({
 
 export default ButtonGradient;
 
-
-
 export const ButtonPlus = ({
   isExpanded,
   size = "default",
@@ -46,17 +44,17 @@ export const ButtonPlus = ({
 }: {
   isExpanded: boolean;
   size:
-  | "sm"
-  | "lg"
-  | "xl"
-  | "default"
-  | "xs"
-  | "icon"
-  | "icon-xs"
-  | "icon-sm"
-  | "icon-lg"
-  | null
-  | undefined;
+    | "sm"
+    | "lg"
+    | "xl"
+    | "default"
+    | "xs"
+    | "icon"
+    | "icon-xs"
+    | "icon-sm"
+    | "icon-lg"
+    | null
+    | undefined;
   className?: string;
 }) => {
   return (
@@ -72,5 +70,3 @@ export const ButtonPlus = ({
     </Button>
   );
 };
-
-

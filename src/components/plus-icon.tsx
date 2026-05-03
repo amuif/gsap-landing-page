@@ -35,7 +35,7 @@ export default function PlusIcon({ isExpanded, className }: PlusIconProps) {
           strokeLinecap="butt"
           className={cn(
             "transition-all duration-300 origin-center",
-            isExpanded ? "rotate-0" : "rotate-180"
+            isExpanded ? "rotate-0" : "rotate-180",
           )}
         >
           <path

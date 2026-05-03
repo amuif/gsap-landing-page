@@ -1,4 +1,5 @@
 import AboutUs from "./components/about-us";
+import ContactUs from "./components/contact-us";
 import FAQ from "./components/FAQ";
 import Hero from "./components/hero";
 import Margquee from "./components/marquee";
@@ -28,6 +29,8 @@ function App() {
       <WhyUs />
       <hr className="border-dashed border-gray-300 h-1 w-full" />
       <FAQ />
+      <hr className="border-dashed border-gray-300 h-1 w-full" />
+      <ContactUs />
     </div>
   );
 }
