@@ -1,4 +1,4 @@
-import React from "react";
+
 import { data } from "@/lib/data";
 import { Marquee } from "./ui/marquee";
 
