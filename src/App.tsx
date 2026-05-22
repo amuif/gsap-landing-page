@@ -1,6 +1,7 @@
 import AboutUs from "./components/about-us";
 import ContactUs from "./components/contact-us";
 import FAQ from "./components/FAQ";
+import Footer from "./components/footer";
 import Hero from "./components/hero";
 import Margquee from "./components/marquee";
 import NavBar from "./components/nav-bar";
@@ -31,6 +32,7 @@ function App() {
       <FAQ />
       <hr className="border-dashed border-gray-300 h-1 w-full" />
       <ContactUs />
+      <Footer/>
     </div>
   );
 }
