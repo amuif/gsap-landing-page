@@ -1,4 +1,3 @@
-import { div } from "motion/react-client";
 import SectionTitle from "./section-title";
 import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from "./ui/avatar";
 

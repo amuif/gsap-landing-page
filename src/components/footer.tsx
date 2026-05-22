@@ -1,5 +1,4 @@
-import { Button } from "./ui/button";
-import { Mail,  } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -54,17 +53,32 @@ const Footer = () => {
           <div>
             <p className="text-sm font-semibold mb-2">Contact</p>
             <div className="flex flex-col gap-2 text-sm text-[#4F4F4F]">
-              <a href="mailto:hello@example.com" className="hover:text-black flex items-center gap-2">
+              <a
+                href="mailto:hello@example.com"
+                className="hover:text-black flex items-center gap-2"
+              >
                 <Mail size={16} /> hello@example.com
               </a>
               <div className="flex gap-3 mt-1">
-                <a aria-label="twitter" href="#" className="text-[#4F4F4F] hover:text-black">
+                <a
+                  aria-label="twitter"
+                  href="#"
+                  className="text-[#4F4F4F] hover:text-black"
+                >
                   {/* <Twitter size={18} /> */}
                 </a>
-                <a aria-label="linkedin" href="#" className="text-[#4F4F4F] hover:text-black">
+                <a
+                  aria-label="linkedin"
+                  href="#"
+                  className="text-[#4F4F4F] hover:text-black"
+                >
                   {/* <Linkedin size={18} /> */}
                 </a>
-                <a aria-label="facebook" href="#" className="text-[#4F4F4F] hover:text-black">
+                <a
+                  aria-label="facebook"
+                  href="#"
+                  className="text-[#4F4F4F] hover:text-black"
+                >
                   {/* <Facebook size={18} /> */}
                 </a>
               </div>

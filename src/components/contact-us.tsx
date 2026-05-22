@@ -38,11 +38,14 @@ const ContactUs = () => {
       <div className="p-5 bg-[#E5E5E5] rounded-lg flex flex-col gap-5 items-center justify-start w-full text-left text-xs font-semibold ">
         <div className="text-[#4f4f4f] w-full flex flex-col gap-2">
           <p className="">FULL NAME</p>
-          <Input placeholder="John Doe" className="bg-white/90 h-10"/>
+          <Input placeholder="John Doe" className="bg-white/90 h-10" />
         </div>{" "}
         <div className="text-[#4f4f4f] w-full flex flex-col gap-2">
           <p className="">YOUR EMAIL</p>
-          <Input placeholder="john.doe@example.com" className="bg-white/90 h-10"/>
+          <Input
+            placeholder="john.doe@example.com"
+            className="bg-white/90 h-10"
+          />
         </div>
         <div className="w-full flex flex-col gap-2">
           <p>SELECT PLAN</p>
@@ -65,7 +68,10 @@ const ContactUs = () => {
         </div>
         <div className="w-full flex flex-col gap-2">
           <p>MESSAGE</p>
-          <textarea placeholder="Type your message...." className="h-22 bg-white/90 px-2 py-3 rounded-lg"/>
+          <textarea
+            placeholder="Type your message...."
+            className="h-22 bg-white/90 px-2 py-3 rounded-lg"
+          />
         </div>
         <ButtonGradient text="Get In Touch" size="xl" className="w-full" />
       </div>

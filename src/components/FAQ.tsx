@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import SectionTitle from "./section-title";
 
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
-import PlusIcon from "./plus-icon";
+
 import { motion } from "motion/react";
 import { ButtonPlus } from "./button-gradient";
 import { gsap } from "gsap";
@@ -101,7 +101,6 @@ export function FAQCARD({
   description,
   isExpanded,
   onToggle,
-  className,
 }: ProcessCardProps) {
   const [autoHeight, setAutoHeight] = useState<number>(2000);
   const descriptionRef = useRef<HTMLDivElement>(null);

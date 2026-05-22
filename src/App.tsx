@@ -32,7 +32,7 @@ function App() {
       <FAQ />
       <hr className="border-dashed border-gray-300 h-1 w-full" />
       <ContactUs />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -230,8 +230,8 @@ function ServiceTwo() {
   );
 }
 
-const AnimatedBar = (props: any) => {
-  const { x, y, width, height, fill } = props;
+const AnimatedBar = (props: { x: number; y: number; width: number; height: number; fill?: string }) => {
+  const { x, y, width, height, fill = "currentColor" } = props;
 
   return (
     <motion.rect
@@ -299,14 +299,14 @@ function ServiceThree() {
             dataKey="desktop"
             stackId="a"
             fill="var(--color-desktop)"
-            shape={<AnimatedBar />}
+            shape={AnimatedBar}
           />
 
           <Bar
             dataKey="mobile"
             stackId="a"
             fill="var(--color-mobile)"
-            shape={<AnimatedBar />}
+            shape={AnimatedBar}
           />
         </BarChart>
       </ChartContainer>

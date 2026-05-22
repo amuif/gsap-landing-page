@@ -104,10 +104,14 @@ export function TypingAnimation({
   );
 
   useEffect(() => {
-    setDisplayedText("");
-    setCurrentWordIndex(0);
-    setCurrentCharIndex(0);
-    setPhase("typing");
+    const resetTimer = setTimeout(() => {
+      setDisplayedText("");
+      setCurrentWordIndex(0);
+      setCurrentCharIndex(0);
+      setPhase("typing");
+    });
+
+    return () => clearTimeout(resetTimer);
   }, [animationSourceKey]);
 
   useEffect(() => {
