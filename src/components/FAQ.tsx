@@ -15,7 +15,7 @@ export default function FAQ() {
   };
   
   return (
-    <div className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5 mx-auto">
+    <div id='faqs' className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5 mx-auto">
       <div>
         <div className="flex items-center justify-center mx-auto">
           <SectionTitle title="FAQs" />
