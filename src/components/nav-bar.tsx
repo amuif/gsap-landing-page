@@ -49,8 +49,12 @@ export default NavBar;
 const DesktopNavBar = () => {
   return (
     <div className="w-full flex items-center justify-between  border-solid border-4 border-[#E5E5E5] rounded-full  pl-1 pr-0 ">
-      <div>
-        <h1>Logo</h1>
+      <div className=''>
+        <img
+          src="/gsap-logo-complete.svg"
+          alt="Logo"
+          className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 object-contain"
+        />
       </div>
       <div>
         <nav className="w-full flex flex-row gap-5 font-semibold text-sm">
@@ -79,7 +83,11 @@ const MobileNavBar = () => {
       className="w-full border-solid border-4 p-1 overflow-hidden rounded-xl border-[#E5E5E5] bg-white"
     >
       <div className="w-full flex justify-between items-center ">
-        <div>Logo</div>
+        <img
+          src="/gsap-logo-complete.svg"
+          alt="Logo"
+          className="w-16 h-16 sm:w-20 sm:h-20"
+        />
         <Button
           variant="ghost"
           onClick={() => setIsOpen(!isOpen)}

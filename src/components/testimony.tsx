@@ -6,7 +6,7 @@ import { Avatar, AvatarImage } from "./ui/avatar";
 const testimonials = [
   {
     quote:
-      "The launch campaign exceeded expectations. Their team delivered clarity, speed, and a conversion lift we hadn’t seen before.",
+      "The launch campaign exceeded expectations. Their team delivered clarity, speed, and a conversion lift we hadn't seen before.",
     name: "Maya Patel",
     title: "Marketing Director, Bloom Labs",
     avatar: "https://i.pravatar.cc/100?img=12",
@@ -78,25 +78,27 @@ const testimonials = [
 
 const Testimony = () => {
   return (
-    <div className="py-10 md:py-10 px-6 md:px-16 w-full max-w-6xl mx-auto flex flex-col gap-8">
-      <div className="flex flex-col md:flex-row items-start justify-between gap-8">
-        <div className="text-left flex flex-col gap-5">
+    <div className="py-6 md:py-10 px-4 sm:px-6 md:px-16 w-full max-w-6xl mx-auto flex flex-col gap-6 md:gap-8">
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row items-start justify-between gap-4 md:gap-8">
+        <div className="text-left flex flex-col gap-3 md:gap-5 w-full md:w-auto">
           <SectionTitle title="Our Clients" />
-          <h1 className="font-bold text-3xl md:text-5xl">
+          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             What our <span className="text-[#4f4f4f]">clients say.</span>
           </h1>
         </div>
-        <div className="max-w-xl">
-          <p className="text-sm text-left pt-16 text-gray-600">
+        <div className="w-full md:max-w-xl">
+          <p className="text-sm md:text-base text-left pt-0 md:pt-16 text-gray-600">
             Real stories from brands that use AIthor to scale faster and achieve
             measurable results.
           </p>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-[2rem]  border-none">
+      {/* Marquee Section */}
+      <div className="overflow-hidden rounded-[2rem] border-none">
         <Marquee
-          className="gap-6 py-8 px-4 md:px-6 border-none"
+          className="gap-4 sm:gap-6 py-6 sm:py-8 px-4 md:px-6 border-none"
           style={{
             WebkitMaskImage:
               "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
@@ -107,40 +109,36 @@ const Testimony = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="min-w-[320px] max-w-sm rounded-3xl p-1 shadow-sm  bg-[#e5e5e5] h-56"
+              className="min-w-70 sm:min-w-75 md:min-w-[320px] max-w-sm rounded-3xl p-1 shadow-sm bg-[#e5e5e5] h-auto"
             >
-              <div className="bg-white/80 rounded-2xl p-6 flex flex-col">
-                <div className="flex items-center gap-1 mb-4 justify-start">
+              <div className="bg-white/80 rounded-2xl p-4 sm:p-6 flex flex-col">
+                <div className="flex items-center gap-1 mb-3 sm:mb-4 justify-start">
                   {Array.from({ length: 5 }).map((_, index) => (
-                    <span key={index} className=" text-lg leading-none ">
+                    <span key={index} className="text-lg leading-none">
                       <Star
                         stroke="#F04711"
                         className="fill-[#F04711]"
-                        size={18}
+                        size={16}
                       />
                     </span>
                   ))}
                 </div>
-                <p className="text-sm  font-bold text-gray-800 italic text-left ">
+                <p className="text-xs sm:text-sm font-bold text-gray-800 italic text-left line-clamp-3 sm:line-clamp-none">
                   "{testimonial.quote}"
                 </p>
               </div>
-              <div className=" flex items-center gap-1 p-3">
-                <Avatar
-                  // src={testimonial.avatar}
-                  // alt={`${testimonial.name} profile`}
-                  className=" rounded-full object-cover border border-gray-200"
-                >
+              <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4">
+                <Avatar className="rounded-full object-cover border border-gray-200 w-10 h-10 sm:w-12 sm:h-12">
                   <AvatarImage
                     src={testimonial.avatar}
                     alt={`${testimonial.name} profile`}
                   />
                 </Avatar>
-                <div className="flex flex-col tex-left text-xs">
-                  <span className="font-semibold text-left  text-gray-900">
+                <div className="flex flex-col text-left">
+                  <span className="font-semibold text-xs sm:text-sm text-gray-900">
                     {testimonial.name}
                   </span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-xs sm:text-sm text-gray-500">
                     {testimonial.title}
                   </span>
                 </div>

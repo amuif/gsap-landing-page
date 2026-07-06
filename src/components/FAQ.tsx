@@ -13,18 +13,23 @@ export default function FAQ() {
   const handleToggle = (index: number) => {
     setExpandedIndex(expandedIndex === index ? -1 : index);
   };
+  
   return (
-    <div className="py-10 md:py-10 px-16 border-y-0 w-full max-w-5xl border border-dashed  border-gray-300 flex flex-col gap-5">
+    <div className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5 mx-auto">
       <div>
         <div className="flex items-center justify-center mx-auto">
           <SectionTitle title="FAQs" />
         </div>
-        <h2 className="text-3xl md:text-5xl font-bold">
-          Need <span className="text-[#4f4f4f]">Answers?</span>
-        </h2>
-        <p>Learn more about how we can transform your business.</p>
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+            Need <span className="text-[#4f4f4f]">Answers?</span>
+          </h2>
+          <p className="text-sm sm:text-base">
+            Learn more about how we can transform your business.
+          </p>
+        </div>
       </div>
-      <div className="bg-[#e5e5e5] p-5 rounded-xl flex flex-col gap-3">
+      <div className="bg-[#e5e5e5] p-3 sm:p-4 md:p-5 rounded-xl flex flex-col ">
         {processItems.map((item, index) => (
           <FAQCARD
             key={index}
@@ -35,18 +40,20 @@ export default function FAQ() {
             onToggle={() => {
               handleToggle(index);
             }}
-            className={index !== processItems.length - 1 ? "mb-8" : ""}
+            className={index !== processItems.length - 1 ? "mb-4 sm:mb-6 md:mb-8" : ""}
           />
         ))}
       </div>
     </div>
   );
 }
+
 type ProcessItem = {
   number: string;
   title: string;
   description: string;
 };
+
 const processItems: ProcessItem[] = [
   {
     number: "01",
@@ -58,7 +65,7 @@ const processItems: ProcessItem[] = [
     number: "02",
     title: "How do I get started with your services?",
     description:
-      "Simply sign up for the membership, and you’ll gain instant access to all tools and resources. You can start customizing and implementing solutions right away",
+      "Simply sign up for the membership, and you'll gain instant access to all tools and resources. You can start customizing and implementing solutions right away",
   },
   {
     number: "03",
@@ -80,7 +87,7 @@ const processItems: ProcessItem[] = [
   },
   {
     number: "06",
-    title: " How often do you release updates?",
+    title: "How often do you release updates?",
     description:
       "We release updates regularly to ensure our tools remain cutting-edge and effective. Members receive notifications about new features and improvements as they are rolled out.",
   },
@@ -101,9 +108,11 @@ export function FAQCARD({
   description,
   isExpanded,
   onToggle,
+  className,
 }: ProcessCardProps) {
   const [autoHeight, setAutoHeight] = useState<number>(2000);
   const descriptionRef = useRef<HTMLDivElement>(null);
+  
   const updateAutoHeight = useCallback(() => {
     if (descriptionRef.current) {
       setAutoHeight(descriptionRef.current.clientHeight);
@@ -138,14 +147,17 @@ export function FAQCARD({
       gsap.fromTo(
         descriptionRef.current,
         { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.5 },
+        { opacity: 1, y: 0, duration: 0.5 }
       );
     }
   }, [isExpanded]);
 
   return (
     <div
-      className="bg-white/80 rounded-2xl cursor-pointer"
+      className={cn(
+        "bg-white/80 rounded-2xl cursor-pointer transition-all duration-200 hover:shadow-md",
+        className
+      )}
       data-name="Card"
       onClick={onToggle}
       tabIndex={0}
@@ -157,22 +169,20 @@ export function FAQCARD({
       }}
     >
       <div
-        className="flex flex-row items-center justify-between p-5 rounded-xl"
+        className="flex flex-row items-center justify-between p-3 sm:p-4 md:p-5 rounded-xl "
         data-name="Content"
       >
-        <div className="flex flex-row gap-2" data-name="Label">
-          <p className="relative shrink-0  max-sm:text-[26px] font-medium">
+        <div className="flex flex-row gap-2 sm:gap-3 flex-1 min-w-0 text-left" data-name="Label">
+          <p className="relative shrink-0 text-xl sm:text-2xl md:text-[26px] font-medium">
             {number}
           </p>
-          <p className="relative flex-1  font-medium whitespace-pre-wrap">
+          <p className="relative flex-1 font-medium text-sm sm:text-base whitespace-pre-wrap wrap-break-words">
             {title}
           </p>
         </div>
-        <ButtonPlus
-          isExpanded={isExpanded}
-          size="lg"
-          // className="relative shrink-0 "
-        />
+        <div className="shrink-0">
+          <ButtonPlus isExpanded={isExpanded} size="lg" />
+        </div>
       </div>
       {description && (
         <motion.div
@@ -180,7 +190,7 @@ export function FAQCARD({
             "transition-all duration-300 overflow-hidden",
             isExpanded
               ? `max-h-(--auto-height)`
-              : "max-h-0 opacity-0 invisible",
+              : "max-h-0 opacity-0 invisible"
           )}
           style={
             {
@@ -188,9 +198,11 @@ export function FAQCARD({
             } as React.CSSProperties
           }
         >
-          <div className="overflow-hidden flex flex-col gap-4 px-5 py-3">
-            <hr className="border-dotted" />
-            <p className="text-left text-[#4f4f4f] text-sm">{description}</p>
+          <div className="overflow-hidden flex flex-col gap-3 sm:gap-4 px-3 sm:px-4 md:px-5 py-3 sm:py-4">
+            <hr className="border-dotted border-[#4f4f4f]" />
+            <p className="text-left text-[#4f4f4f] text-xs sm:text-sm leading-relaxed">
+              {description}
+            </p>
           </div>
         </motion.div>
       )}

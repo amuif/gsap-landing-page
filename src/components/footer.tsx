@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="w-full border-t border-gray-200 py-8">
       <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-8 items-start justify-between">
         <div className="flex flex-col gap-3 text-left">
-          <h2 className="text-2xl font-bold">Logo</h2>
+         <img src="/gsap-logo-complete.svg" alt='logo' className='h-16 w-36' /> 
           <p className="text-sm text-[#4F4F4F] max-w-sm">
             Build meaningful 1-to-1 connections with every customer, at scale.
           </p>
