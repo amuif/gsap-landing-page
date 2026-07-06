@@ -2,7 +2,7 @@ import SectionTitle from "./section-title";
 import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from "./ui/avatar";
 const AboutUs = () => {
   return (
-    <div className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 mx-auto">
+    <div id='about' className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 mx-auto">
       <div className="mx-auto pb-6 md:pb-10">
         <div className="mx-auto flex justify-center w-full">
           <SectionTitle title="About us" />

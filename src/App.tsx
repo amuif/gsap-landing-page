@@ -12,9 +12,7 @@ import WhyUs from "./components/why-us";
 function App() {
   return (
     <div className="font-sans relative w-full flex flex-col items-center justify-center bg-white">
-      <div className="absolute top-4  w-full md:max-w-3xl z-50 ">
         <NavBar />
-      </div>
       <Hero />
       <div className="w-full border-y border-dashed border-gray-300">
         <Margquee />

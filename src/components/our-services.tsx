@@ -34,7 +34,7 @@ import { motion } from "motion/react";
 
 const OurServices = () => {
   return (
-    <div className="border-y-0  py-10 border border-dashed border-gray-300 w-full max-w-5xl  flex flex-col gap-4">
+    <div id='services' className="border-y-0  py-10 border border-dashed border-gray-300 w-full max-w-5xl  flex flex-col gap-4">
       <div className="mx-auto p-14 flex flex-col gap-5">
         <div className="mx-auto">
           <SectionTitle title="our services" />

@@ -78,7 +78,7 @@ const testimonials = [
 
 const Testimony = () => {
   return (
-    <div className="py-6 md:py-10 px-4 sm:px-6 md:px-16 w-full max-w-6xl mx-auto flex flex-col gap-6 md:gap-8">
+    <div id='clients' className="py-6 md:py-10 px-4 sm:px-6 md:px-16 w-full max-w-6xl mx-auto flex flex-col gap-6 md:gap-8">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row items-start justify-between gap-4 md:gap-8">
         <div className="text-left flex flex-col gap-3 md:gap-5 w-full md:w-auto">
