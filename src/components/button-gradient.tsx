@@ -1,14 +1,21 @@
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
 import { Plus } from "lucide-react";
+
+const sizeClasses: Record<string, string> = {
+  xs: "h-6 px-2 text-xs",
+  sm: "h-7 px-2.5 text-xs",
+  default: "h-8 px-3 text-sm",
+  lg: "h-9 px-3.5 text-sm",
+  xl: "h-12 px-5 text-base font-semibold",
+};
 
 const ButtonGradient = ({
   text,
-  size,
+  size = "default",
   className,
 }: {
   text: string;
-  size:
+  size?:
     | "sm"
     | "lg"
     | "xl"
@@ -23,15 +30,16 @@ const ButtonGradient = ({
   className?: string;
 }) => {
   return (
-    <Button
-      size={size}
+    <button
+      type="button"
       className={cn(
-        "rounded-full  border-gray-300 border-b-2 border-b-[#F04711]",
+        "cursor-pointer inline-flex items-center justify-center font-medium bg-black text-white hover:bg-neutral-800 transition-colors rounded-full border-gray-300 border-b-2 border-b-[#F04711]",
+        size ? sizeClasses[size] || "h-8 px-3 text-sm" : "h-8 px-3 text-sm",
         className,
       )}
     >
       {text}
-    </Button>
+    </button>
   );
 };
 
@@ -39,11 +47,10 @@ export default ButtonGradient;
 
 export const ButtonPlus = ({
   isExpanded,
-  size = "default",
   className,
 }: {
   isExpanded: boolean;
-  size:
+  size?:
     | "sm"
     | "lg"
     | "xl"
@@ -58,15 +65,15 @@ export const ButtonPlus = ({
   className?: string;
 }) => {
   return (
-    <Button
-      size={size}
+    <div
+      aria-hidden="true"
       className={cn(
-        "rounded-full  border-gray-300 border-b-2 border-b-[#F04711] transition-colors duration-300",
+        "cursor-pointer inline-flex shrink-0 items-center justify-center size-9 rounded-full border border-gray-300 border-b-2 border-b-[#F04711] bg-black text-white transition-colors duration-300",
         isExpanded ? "border-[#F04711]" : "",
         className,
       )}
     >
-      <Plus />
-    </Button>
+      <Plus className="size-4" />
+    </div>
   );
 };

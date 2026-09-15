@@ -3,7 +3,10 @@ import SectionTitle from "./section-title";
 
 export default function WhyUs() {
   return (
-    <div id='whyus' className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5 mx-auto">
+    <div
+      id="whyus"
+      className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5 mx-auto"
+    >
       <div className="flex items-center justify-center mx-auto">
         <SectionTitle title="Why Us" />
       </div>
@@ -41,7 +44,7 @@ function WhyUsContent() {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-[#e5e5e5] rounded-xl p-1">
       {/* Freelance Column */}
       <div className="text-left flex flex-col gap-6 sm:gap-8 md:gap-10 p-4 sm:p-5 text-xs sm:text-sm rounded-lg bg-white/50">
-        <h4 className="text-base sm:text-lg font-semibold">Freelance</h4>
+        <h3 className="text-base sm:text-lg font-semibold">Freelance</h3>
         <ul className="flex flex-col gap-2 sm:gap-3">
           {features.map((feature, index) => (
             <li key={index}>
@@ -59,7 +62,7 @@ function WhyUsContent() {
 
       {/* Other Agencies Column */}
       <div className="text-left flex flex-col bg-white gap-6 sm:gap-8 md:gap-10 p-4 sm:p-5 text-xs sm:text-sm my-1 sm:my-2 rounded-xl shadow-sm">
-        <h4 className="text-base sm:text-lg font-semibold">Other Agencies</h4>
+        <h3 className="text-base sm:text-lg font-semibold">Other Agencies</h3>
         <ul className="flex flex-col gap-2 sm:gap-3">
           {features.map((feature, index) => (
             <li key={index}>
@@ -77,7 +80,7 @@ function WhyUsContent() {
 
       {/* Working with Us Column */}
       <div className="text-left flex flex-col bg-black text-white gap-6 sm:gap-8 md:gap-10 p-4 sm:p-5 text-xs sm:text-sm my-1 sm:my-2 rounded-xl">
-        <h4 className="text-base sm:text-lg font-semibold">Working with Us</h4>
+        <h3 className="text-base sm:text-lg font-semibold">Working with Us</h3>
         <ul className="flex flex-col gap-2 sm:gap-3">
           {workingWithUsFeatures.map((feature, index) => (
             <li key={index}>

@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Button } from "./ui/button";
-import { AnimatePresence, motion } from "motion/react";
 import ButtonGradient from "./button-gradient";
 
 const NavLinks = [
@@ -32,14 +30,14 @@ const NavLinks = [
 
 const NavBar = () => {
   return (
-    <motion.nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm">
+    <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm">
       <div className="hidden md:flex w-full">
         <DesktopNavBar />
       </div>
       <div className="flex md:hidden w-full">
         <MobileNavBar />
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
@@ -53,7 +51,9 @@ const DesktopNavBar = () => {
         <a href="/">
           <img
             src="/gsap-logo-complete.svg"
-            alt="Logo"
+            alt="AIthor Logo"
+            width={64}
+            height={64}
             className="w-12 h-12 lg:w-18 lg:h-14 xl:w-16 xl:h-16 object-contain"
           />
         </a>
@@ -61,7 +61,10 @@ const DesktopNavBar = () => {
 
       {/* Navigation Links & CTA - Far Right */}
       <div className="flex items-center gap-4 lg:gap-6">
-        <nav className="hidden lg:flex flex-row items-center gap-4 xl:gap-6 font-semibold text-sm">
+        <nav
+          aria-label="Main Navigation"
+          className="hidden lg:flex flex-row items-center gap-4 xl:gap-6 font-semibold text-sm"
+        >
           {NavLinks.map((link, index) => (
             <a
               key={index}
@@ -82,28 +85,27 @@ const DesktopNavBar = () => {
 
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
-    <motion.div
-      layout
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="w-full border-b border-[#E5E5E5] bg-white/80 backdrop-blur-md"
-    >
+    <div className="w-full border-b border-[#E5E5E5] bg-white/80 backdrop-blur-md">
       <div className="w-full flex justify-between items-center px-4 py-1.5">
         {/* Logo - Far Left */}
         <a href="/" className="shrink-0">
           <img
             src="/gsap-logo-complete.svg"
-            alt="Logo"
+            alt="AIthor Logo"
+            width={56}
+            height={40}
             className="w-14 h-10 sm:w-14 sm:h-14 object-contain"
           />
         </a>
 
         {/* Hamburger Menu - Far Right */}
-        <Button
-          variant="ghost"
+        <button
+          type="button"
+          aria-label="Toggle navigation menu"
           onClick={() => setIsOpen(!isOpen)}
-          className="relative flex flex-col items-center justify-center w-8 h-8 sm:w-10 sm:h-10 gap-1 bg-slate-100 rounded-full hover:bg-slate-200 transition-colors"
+          className="relative flex flex-col items-center justify-center w-8 h-8 sm:w-10 sm:h-10 gap-1 bg-slate-100 rounded-full hover:bg-slate-200 transition-colors cursor-pointer"
         >
           <div
             className={`bg-black w-4 h-0.5 rounded-full transition-all duration-300 ${
@@ -115,43 +117,36 @@ const MobileNavBar = () => {
               isOpen ? "-rotate-45 -translate-y-1" : ""
             }`}
           />
-        </Button>
+        </button>
       </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            key="content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <div className="px-4 pb-4 pt-2">
-              <nav className="flex flex-col gap-2">
-                {NavLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className="text-base font-semibold text-gray-700 hover:text-black transition-colors py-2 border-b border-gray-100"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </nav>
-              <div className="w-full mt-3">
-                <ButtonGradient
-                  text="Get in Touch"
-                  size={"lg"}
-                  className="w-full"
-                />
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-4 pb-4 pt-2">
+          <nav aria-label="Mobile Navigation" className="flex flex-col gap-2">
+            {NavLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="text-base font-semibold text-gray-700 hover:text-black transition-colors py-2 border-b border-gray-100"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+          <div className="w-full mt-3">
+            <ButtonGradient
+              text="Get in Touch"
+              size={"lg"}
+              className="w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

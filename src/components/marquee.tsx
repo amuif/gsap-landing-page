@@ -1,4 +1,3 @@
-
 import { data } from "@/lib/data";
 import { Marquee } from "./ui/marquee";
 
@@ -10,7 +9,9 @@ const Margquee = () => {
           <img
             src={item.image}
             alt={item.name}
-            className="w-16 h-16  object-fit"
+            width={64}
+            height={64}
+            className="w-16 h-16 object-contain"
           />
           <div></div>
         </div>

@@ -13,9 +13,12 @@ export default function FAQ() {
   const handleToggle = (index: number) => {
     setExpandedIndex(expandedIndex === index ? -1 : index);
   };
-  
+
   return (
-    <div id='faqs' className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5 mx-auto">
+    <div
+      id="faqs"
+      className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5 mx-auto"
+    >
       <div>
         <div className="flex items-center justify-center mx-auto">
           <SectionTitle title="FAQs" />
@@ -40,7 +43,9 @@ export default function FAQ() {
             onToggle={() => {
               handleToggle(index);
             }}
-            className={index !== processItems.length - 1 ? "mb-4 sm:mb-6 md:mb-8" : ""}
+            className={
+              index !== processItems.length - 1 ? "mb-4 sm:mb-6 md:mb-8" : ""
+            }
           />
         ))}
       </div>
@@ -112,7 +117,7 @@ export function FAQCARD({
 }: ProcessCardProps) {
   const [autoHeight, setAutoHeight] = useState<number>(2000);
   const descriptionRef = useRef<HTMLDivElement>(null);
-  
+
   const updateAutoHeight = useCallback(() => {
     if (descriptionRef.current) {
       setAutoHeight(descriptionRef.current.clientHeight);
@@ -147,16 +152,19 @@ export function FAQCARD({
       gsap.fromTo(
         descriptionRef.current,
         { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.5 }
+        { opacity: 1, y: 0, duration: 0.5 },
       );
     }
   }, [isExpanded]);
 
   return (
     <div
+      role="button"
+      aria-expanded={isExpanded}
+      aria-label={title}
       className={cn(
         "bg-white/80 rounded-2xl cursor-pointer transition-all duration-200 hover:shadow-md",
-        className
+        className,
       )}
       data-name="Card"
       onClick={onToggle}
@@ -172,7 +180,10 @@ export function FAQCARD({
         className="flex flex-row items-center justify-between p-3 sm:p-4 md:p-5 rounded-xl "
         data-name="Content"
       >
-        <div className="flex flex-row gap-2 sm:gap-3 flex-1 min-w-0 text-left" data-name="Label">
+        <div
+          className="flex flex-row gap-2 sm:gap-3 flex-1 min-w-0 text-left"
+          data-name="Label"
+        >
           <p className="relative shrink-0 text-xl sm:text-2xl md:text-[26px] font-medium">
             {number}
           </p>
@@ -190,7 +201,7 @@ export function FAQCARD({
             "transition-all duration-300 overflow-hidden",
             isExpanded
               ? `max-h-(--auto-height)`
-              : "max-h-0 opacity-0 invisible"
+              : "max-h-0 opacity-0 invisible",
           )}
           style={
             {

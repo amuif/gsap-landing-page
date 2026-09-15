@@ -7,7 +7,10 @@ import ButtonGradient from "./button-gradient";
 
 const Pricing = () => {
   return (
-    <div id='pricing' className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5 mx-auto">
+    <div
+      id="pricing"
+      className="py-6 md:py-10 px-4 sm:px-8 md:px-16 border-y-0 w-full max-w-5xl border border-dashed border-gray-300 flex flex-col gap-5 mx-auto"
+    >
       <div className="mx-auto flex items-center justify-center">
         <SectionTitle title="Pricing" />
       </div>
@@ -35,6 +38,7 @@ function PricingPlans() {
       <div className="transition-all duration-300 text-sm sm:text-lg p-1 rounded-xl flex flex-row items-center justify-between bg-[#e5e5e5] w-full sm:w-auto">
         <Button
           variant="default"
+          aria-pressed={selectedPlan === "Monthly"}
           onClick={() => setSelectedPlan("Monthly")}
           className={`p-2 sm:p-3 rounded-lg text-black text-xs sm:text-sm ${
             selectedPlan === "Monthly" ? "bg-white shadow" : "bg-[#e5e5e5]"
@@ -44,6 +48,7 @@ function PricingPlans() {
         </Button>
         <Button
           variant="default"
+          aria-pressed={selectedPlan === "Yearly"}
           onClick={() => setSelectedPlan("Yearly")}
           className={`p-2 sm:p-3 rounded-lg text-black text-xs sm:text-sm ${
             selectedPlan === "Yearly" ? "bg-white shadow" : "bg-[#e5e5e5]"
@@ -66,7 +71,9 @@ function PricingPlans() {
               </div>
               <div className="text-left mt-3 sm:mt-5">
                 <h3 className="font-bold text-sm sm:text-base">Subscribe</h3>
-                <p className="text-xs sm:text-sm">Pick a plan that fits your workflow.</p>
+                <p className="text-xs sm:text-sm">
+                  Pick a plan that fits your workflow.
+                </p>
               </div>
             </div>
             <div className="p-3 sm:p-4 bg-white rounded-lg">
@@ -76,7 +83,9 @@ function PricingPlans() {
               </div>
               <div className="text-left mt-3 sm:mt-5">
                 <h3 className="font-bold text-sm sm:text-base">Build</h3>
-                <p className="text-xs sm:text-sm">We develop custom AI solutions.</p>
+                <p className="text-xs sm:text-sm">
+                  We develop custom AI solutions.
+                </p>
               </div>
             </div>
             <div className="p-3 sm:p-4 bg-white rounded-lg">
@@ -85,7 +94,9 @@ function PricingPlans() {
                 <ProgressBar progress={100} />
               </div>
               <div className="text-left mt-3 sm:mt-5">
-                <h3 className="font-bold text-sm sm:text-base">Test & optimise</h3>
+                <h3 className="font-bold text-sm sm:text-base">
+                  Test & optimise
+                </h3>
                 <p className="text-xs sm:text-sm">
                   We optimize to maximize long-term impact.
                 </p>

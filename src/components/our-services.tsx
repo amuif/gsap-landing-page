@@ -34,7 +34,10 @@ import { motion } from "motion/react";
 
 const OurServices = () => {
   return (
-    <div id='services' className="border-y-0  py-10 border border-dashed border-gray-300 w-full max-w-5xl  flex flex-col gap-4">
+    <div
+      id="services"
+      className="border-y-0  py-10 border border-dashed border-gray-300 w-full max-w-5xl  flex flex-col gap-4"
+    >
       <div className="mx-auto p-14 flex flex-col gap-5">
         <div className="mx-auto">
           <SectionTitle title="our services" />
@@ -87,7 +90,7 @@ function ServiceOne() {
               value={selectedModel}
               onValueChange={(v) => setSelectedModel(String(v))}
             >
-              <SelectTrigger className="w-fit">
+              <SelectTrigger className="w-fit" aria-label="Select AI Model">
                 <SelectValue placeholder="" className="">
                   <img
                     src={modelMap[selectedModel]?.img}
@@ -120,7 +123,13 @@ function ServiceOne() {
           <div>
             <DropdownMenu>
               <DropdownMenuTrigger
-                render={<Button variant="outline" size="icon" />}
+                render={
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    aria-label="More options"
+                  />
+                }
                 className="border-0"
               >
                 <ChevronDown />
@@ -151,21 +160,21 @@ function ServiceOne() {
               />
               <div className="flex flex-row justify-between items-center">
                 <div>
-                  <Button size="icon-sm">
+                  <Button size="icon-sm" aria-label="Add file">
                     <Plus />
                   </Button>
-                  <Button size="icon-sm">
+                  <Button size="icon-sm" aria-label="Attach link">
                     <Link />
                   </Button>
-                  <Button size="icon-sm">
+                  <Button size="icon-sm" aria-label="Open folder">
                     <Folder />
                   </Button>
                 </div>
                 <div>
-                  <Button size="icon-sm">
+                  <Button size="icon-sm" aria-label="Record voice">
                     <Mic />
                   </Button>
-                  <Button size="icon-sm">
+                  <Button size="icon-sm" aria-label="Send message">
                     <Send />
                   </Button>
                 </div>
@@ -217,6 +226,7 @@ function ServiceTwo() {
               </div>
 
               <Button
+                aria-label={`Call ${call.name}`}
                 className="p-2 rounded-full bg-black/80 hover:bg-black/90 
                          transition-colors duration-200"
               >
@@ -230,7 +240,13 @@ function ServiceTwo() {
   );
 }
 
-const AnimatedBar = (props: { x: number; y: number; width: number; height: number; fill?: string }) => {
+const AnimatedBar = (props: {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  fill?: string;
+}) => {
   const { x, y, width, height, fill = "currentColor" } = props;
 
   return (
